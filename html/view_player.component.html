@@ -1,0 +1,37 @@
+<div class="row" id="playerinfo" >
+    <h2>[{{player.id}}] {{player.username}}</h2>
+    <p>Pobeda: {{player.wins}} / Odigranih: {{player.played}}</p>
+    <img id="spinner-player" src="res/spinner.svg">
+    <div id="alert-player"></div>
+    <div *ngIf="isAuth">
+        <h3>Izazovi:</h3>
+        <a class="btn btn-lg btn-primary" (click)="challenge('x')" role="button">X &raquo;</a>
+        <a class="btn btn-lg btn-primary" style="background: #B21212;" (click)="challenge('o')" role="button">O &raquo;</a>
+        <img id="spinner" style="display: none" src="res/spinner.svg">
+        <div id="alert"></div>
+    </div>
+    <h3>Partije</h3>
+    <table class="table" id="rooms" cellspacing="0">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Igrač X</th>
+            <th>Igrač O</th>
+            <th>Pobednik</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let game of games">
+            <th><a [routerLink]="['../ViewGame', {id: game.id}]">{{game.id}}</a></th>
+            <th><a [routerLink]="['../ViewPlayer', {id: game.player1.id}]">[{{game.player1.id}}] {{game.player1.username}}</a></th>
+            <th><a [routerLink]="['../ViewPlayer', {id: game.player2.id}]">[{{game.player2.id}}] {{game.player2.username}}</a></th>
+            <th>[{{game.winner}}]</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <img id="spinner-games" src="res/spinner.svg">
+    <div id="alert-games"></div>
+    <a [routerLink]="['../ViewPlayers']">&laquo; Povratak na listu igrača.</a>
+</div>

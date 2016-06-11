@@ -1,0 +1,17 @@
+<div class="row">
+    <h2>Log in:</h2>
+    <p>Ukoliko nemate nalog, <a [routerLink]='["../Register"]'>registrujte se</a>.</p>
+    <form action="/php/services/login_service.php" method="post" role="form" [ngFormModel]="loginForm">
+        <div class="form-group">
+            <label for="username">Korisničko ime:</label>
+            <input type="text" class="form-control" id="username" name="username" ngControl='username' placeholder="Unesite korisničko ime ili email">
+        </div>
+        <div class="form-group">
+            <label for="password">Šifra:</label>
+            <input type="password" class="form-control" id="password" name="password" ngControl='password' placeholder="Unesite šifru">
+        </div>
+        <button (click)="onLogin()" type="submit" class="btn btn-default">Uloguj se</button>
+        <img id="spinner" src="res/spinner.svg" style="visibility: hidden">
+        <div id="alert"></div>
+    </form>
+</div>

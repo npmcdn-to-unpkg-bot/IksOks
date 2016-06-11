@@ -1,0 +1,43 @@
+<div class="row">
+    <h2>Nova igra</h2>
+    <h3>Izaberi znak:</h3>
+    <form>
+        <label style="color: #0971B2; font-weight: bold;" class="radio-inline">
+            <input id="rdb-x" type="radio" name="sign" value="x" checked>X
+        </label>
+        <label style="color: #B21212; font-weight: bold;" class="radio-inline">
+            <input id="rdb-o" type="radio" name="sign" value="o">O
+        </label>
+    </form>
+    <div class="row">
+        <img id="spinner" src="res/spinner.svg">
+        <div id="alert"></div>
+    </div>
+    <table class="table" id="players" cellspacing="0" style="margin-top: 20px;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ime</th>
+            <th>Pobeda</th>
+            <th>Odigranih</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th><a style="color: #B21212;" [routerLink]="['../ViewPlayer', {id: 0}]">[0]</a></th>
+            <th><a style="color: #B21212;" [routerLink]="['../ViewPlayer', {id: 0}]">AI</a></th>
+            <th></th>
+            <th></th>
+            <th (click)="challenge(0)"><a style="color: #B21212;" href="#" onclick="return false;">Igraj</a></th>
+        </tr>
+        <tr *ngFor="let player of players">
+            <th><a [routerLink]="['../ViewPlayer', {id: player.id}]">[{{player.id}}]</a></th>
+            <th><a [routerLink]="['../ViewPlayer', {id: player.id}]">{{player.username}}</a></th>
+            <th>{{player.wins}}</th>
+            <th>{{player.played}}</th>
+            <th><a href="#" onclick="return false;" (click)="challenge(player.id)">Izazovi</a></th>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,34 @@
+/*thead tr {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+tbody tr {
+    background-color: #eee;
+}
+
+tbody th {
+    border-color: #fff;
+    border-bottom: 2px;
+    border-right: 1px;
+}
+
+th {
+    padding: 5px;
+}
+
+th input[type="radio"] {
+    margin-left: 9px;
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: normal;
+}
+
+#rooms {
+    width: 100%;
+    margin-bottom: 10px;
+}*/

@@ -1,0 +1,24 @@
+<div class="row">
+    <h2>Registracija naloga</h2>
+    <p>Ukoliko već imate nalog, <a [routerLink]='["../Login"]'>ulogujte se</a>.</p>
+    <form action="/php/services/register_service.php" method="post" role="form" [ngFormModel]="registerForm">
+        <div class="form-group">
+            <label for="username">Korisničko ime:</label>
+            <input type="text" class="form-control" id="username" name="username" ngControl='username' placeholder="Unesite korisničko ime">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" ngControl='email' placeholder="Unesite email">
+        </div>
+        <div class="form-group">
+            <label for="password">Šifra:</label>
+            <input type="password" class="form-control" id="password" name="password" ngControl='password' placeholder="Unesite šifru">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="password_confirm" name="password" ngControl='password_confirm' placeholder="Ponovite šifru">
+        </div>
+        <button type="submit" (click)="onRegister()" class="btn btn-default">Registruj se</button>
+        <img id="spinner" src="res/spinner.svg" style="visibility: hidden">
+        <div id="alert"></div>
+    </form>
+</div>

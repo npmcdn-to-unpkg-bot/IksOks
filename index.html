@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- The next 3 meta tags *must* come first in the head. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/IksOks/">
+    <title>Iks Oks</title>
+    <link rel="icon" href="favicon.ico">
+    <meta name="description" content="XOXOXOXO">
+    <meta name="author" content="Velibor Bačujkov 2493">
+
+    <!-- Bootstrap -->
+    <link href="dependencies/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="dependencies/bootstrap/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="dependencies/bootstrap/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="dependencies/jquery.min.js"><\/script>')</script>
+    <script src="dependencies/bootstrap/bootstrap.min.js"></script>
+    <script src="dependencies/bootstrap/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- AngularJS 2 -->
+    <script src="dependencies/angularjs2/shim.min.js"></script>
+    <script src="dependencies/angularjs2/zone.js"></script>
+    <script src="dependencies/angularjs2/reflect-metadata.js"></script>
+    <script src="dependencies/angularjs2/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
+</html>

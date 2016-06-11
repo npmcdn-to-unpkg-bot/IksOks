@@ -1,0 +1,102 @@
+<div id="gamepanel" style="display: none">
+    <div *ngIf="game" class="row">
+        <div class="col-sm-4 col-md-offset-1 player-info player-x">
+            <h3>Igrač X:</h3>
+            <p>
+                <a [routerLink]="['../ViewPlayer', {id: game.player1.id}]">[{{game.player1.id}}] {{game.player1.username}}</a>
+                <br/>
+                Wins: {{game.player1.wins}} / Played: {{game.player1.played}}
+            </p>
+        </div>
+        <div class="col-sm-2">
+            <h3 style="width: 100%; text-align: center; margin-top: 35px;">vs</h3>
+        </div>
+        <div class="col-sm-4 player-info player-o">
+            <h3>Igrač O:</h3>
+            <p>
+                <a [routerLink]="['../ViewPlayer', {id: game.player2.id}]">[{{game.player2.id}}] {{game.player2.username}}</a>
+                <br/>
+                Wins: {{game.player2.wins}} / Played: {{game.player2.played}}
+            </p>
+        </div>
+    </div>
+    <div class="row game-table">
+        <div class="col-sm-8 col-md-offset-2">
+            <svg id="victory-img" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                 width="60.000000" height="60.000000" viewBox="0 0 60.000000 60.000000"
+                 preserveAspectRatio="xMidYMid meet">
+                <line id="victory-line" style="stroke: black; stroke-width:3"/>
+            </svg>
+            <div class="iks_oks_polje">
+                <a class="thumbnail">
+                    <div class="frontpage_square">
+                        <img id="grid0" src="" class="img img-responsive full-width" />
+                    </div>
+                </a>
+            </div>
+            <div class="iks_oks_polje">
+                <a class="thumbnail">
+                    <div class="frontpage_square">
+                        <img id="grid1" src="" class="img img-responsive full-width" />
+                    </div>
+                </a>
+            </div>
+            <div class="iks_oks_polje">
+                <a class="thumbnail">
+                    <div class="frontpage_square">
+                        <img id="grid2" src="" class="img img-responsive full-width" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="iks_oks_polje">
+                <a class="thumbnail">
+                    <div class="frontpage_square">
+                        <img id="grid3" src="" class="img img-responsive full-width" />
+                    </div>
+                </a>
+            </div>
+            <div class="iks_oks_polje">
+                <a class="thumbnail">
+                    <div class="frontpage_square">
+                        <img id="grid4" src="" class="img img-responsive full-width" />
+                    </div>
+                </a>
+            </div>
+            <div class="iks_oks_polje">
+                <a class="thumbnail">
+                    <div class="frontpage_square">
+                        <img id="grid5" src="" class="img img-responsive full-width" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="iks_oks_polje">
+                <a class="thumbnail">
+                    <div class="frontpage_square">
+                        <img id="grid6" src="" class="img img-responsive full-width" />
+                    </div>
+                </a>
+            </div>
+            <div class="iks_oks_polje">
+                <a class="thumbnail">
+                    <div class="frontpage_square">
+                        <img id="grid7" src="" class="img img-responsive full-width" />
+                    </div>
+                </a>
+            </div>
+            <div class="iks_oks_polje">
+                <a class="thumbnail">
+                    <div class="frontpage_square">
+                        <img id="grid8" src="" class="img img-responsive full-width" />
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <img id="spinner" src="res/spinner.svg">
+    <div id="alert"></div>
+    <a [routerLink]="['../ViewGames']">&laquo; Povratak na listu igara.</a>
+</div>

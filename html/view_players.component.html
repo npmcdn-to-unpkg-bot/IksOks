@@ -1,0 +1,25 @@
+<div class="row">
+    <h2>Igrači</h2>
+    <table class="table" id="rooms" cellspacing="0">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ime</th>
+            <th>Pobeda</th>
+            <th>Odigranih</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let player of players">
+            <th><a [routerLink]="['../ViewPlayer', {id: player.id}]">[{{player.id}}]</a></th>
+            <th><a [routerLink]="['../ViewPlayer', {id: player.id}]">{{player.username}}</a></th>
+            <th>{{player.wins}}</th>
+            <th>{{player.played}}</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <img id="spinner" src="res/spinner.svg">
+    <div id="alert"></div>
+</div>

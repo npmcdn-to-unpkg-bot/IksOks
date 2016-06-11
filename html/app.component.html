@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" [routerLink]="['Home']">Iks Oks</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li [class.active]="router.isRouteActive(router.generate(['Home']))"><a [routerLink]="['Home']">Home</a></li>
+                <li [class.active]="router.isRouteActive(router.generate(['ViewPlayers']))"><a [routerLink]="['ViewPlayers']">Igrači</a></li>
+                <li [class.active]="router.isRouteActive(router.generate(['ViewGames']))"><a [routerLink]="['ViewGames']">Partije</a></li>
+                <li *ngIf="isAuth" [class.active]="router.isRouteActive(router.generate(['NewGame']))"><a [routerLink]="['NewGame']">Nova igra</a></li>
+                <li *ngIf="isAuth" [class.active]="router.isRouteActive(router.generate(['ActiveGames']))"><a id="active-games" (click)="clearNotifications()" [routerLink]="['ActiveGames']">Aktivne igre ({{activeGames}})</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li *ngIf="!isAuth" [class.active]="router.isRouteActive(router.generate(['Register']))" ng-class="getClass('/register')"><a [routerLink]="['Register']">Registracija</a></li>
+                <li *ngIf="!isAuth" [class.active]="router.isRouteActive(router.generate(['Login']))" ng-class="getClass('/login')"><a [routerLink]="['Login']">Uloguj se</a></li>
+                <li *ngIf="isAuth"><a [routerLink]="['ViewPlayer', {id: token}]" style="color: #337ab7;">{{username}}</a></li>
+                <li *ngIf="isAuth" (click)="onLogout()"><a href="" onclick="return false;">Izloguj se</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <a id="notification" href="" onclick="return false;" (click)="notificationClick()"></a>
+    <div class="jumbotron">
+        <h1>Iks Oks</h1>
+    </div>
+    <router-outlet></router-outlet>
+</div>
